@@ -1,0 +1,9 @@
+.container {
+    max-width: 640px;
+}
+
+.glyphicon-remove {
+    font-size: 11px;
+    left: -2px;
+    top: -1px;
+}

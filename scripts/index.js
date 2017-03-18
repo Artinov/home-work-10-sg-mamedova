@@ -54,7 +54,6 @@ markAllCompleted.onclick = function() {
         todos.forEach(function(todo) {
             var li = document.querySelector("li[todo-index='" + todo.index + "']");
             var checkbox = li.querySelector("input");
-
             todo.isDone = true;
             checkbox.checked = true;
             li.setAttribute("class", "todo-done")
@@ -62,10 +61,10 @@ markAllCompleted.onclick = function() {
     }
 
     countActiveTodos();
-}
+};
 
 function renderTodos() {
-    var todoElementTemplate = document.querySelector("div li").cloneNode(true);
+    var todoElementTemplate = document.querySelector("div.b-clone li").cloneNode(true);
 
     if (todos.length == 0) {
         todosList.innerHTML = "";
@@ -74,8 +73,9 @@ function renderTodos() {
 
     todos.forEach(function(todo) {
         todoElementTemplate.querySelector("span").innerText = todo.text;
-        todoElementTemplate.setAttribute("todo-index", todo.index)
+        todoElementTemplate.setAttribute("todo-index", todo.index);
         todoElementTemplate.querySelector("input").onchange = function(e) {
+            console.log('e --> ',e );
             var li = e.path[1];
             var todoIndex = li.getAttribute("todo-index");
             var todo = todos.filter(function(todo) {
@@ -93,7 +93,7 @@ function renderTodos() {
                 todo.isDone = false;
             }
             countActiveTodos();
-        }
+        };
         todoElementTemplate.querySelector("button").onclick = function(e) {
             var li = e.path[1];
             var todoIndex = li.getAttribute("todo-index");
@@ -106,7 +106,7 @@ function renderTodos() {
 
             todosList.removeChild(li);
             countActiveTodos();
-        }
+        };
         todosList.appendChild(todoElementTemplate);
     });
 }

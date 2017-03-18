@@ -1,8 +1,84 @@
+body {
+    padding-top: 40px;
+    background-color: #ffe4e1;
+}
 ul {
     list-style: none;
+    padding-left: 10px;
+    margin-top: 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    text-align: left;
+    margin-bottom: 0;
+    background-color: #ffffff;
 }
-
+ul li {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding: 6px;
+}
+ul li:last-child {
+    border: none;
+}
 ul li.todo-done {
     color: gray;
     text-decoration: line-through;
+}
+
+.b-btn {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+}
+.b-btn__list {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0;
+    margin: 0 0 15px;
+    list-style: none;
+    display: inline-block;
+}
+.b-btn__list li {
+    display: inline-block;
+    width: auto;
+    border: none;
+    border-right: 1px solid #ccc;
+}
+.b-btn__list li:last-child {
+    border: none;
+}
+.b-btn__list .b-btn {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+}
+.b-btn__remove {
+    width: 20px;
+    height: 20px;
+}
+.b-btn__row {
+    margin-top: 15px;
+}
+.markAllCompleted {
+    width: 34px;
+    height: 34px;
+}
+.clear-completed {
+    padding: 7px;
+   
+}
+.clear-completed:hover {
+    background: #d8220e;
+    color: #fff;
+    border-color: #d8220e;;
+}
+
+.b-todos-left {
+    line-height: 34px;
 }
