@@ -26,7 +26,7 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <ul id="todoList"></ul>
+                <ul id="todoList" class="list-group"></ul>
             </div>
         </div>
 
@@ -36,11 +36,11 @@
                 <span class="b-todos-left">Todos left: <span id="todosLeft"></span></span>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <ul class="b-btn__list">
-                    <li><button id="showAll" class="b-btn">All</button>
-                    <li><button id="showActive" class="b-btn">Active</button></li>
-                    <li><button id="showCompleted" class="b-btn">Completed</button></li>
-                </ul>
+                <div class="btn-group" role="group">
+                   <button id="showAll" class="btn btn-default">All</button>
+                   <button id="showActive" class="btn btn-default">Active</button>
+                   <button id="showCompleted" class="btn btn-default">Completed</button>
+                </div>
             </div>
             <div class="col-xs-12 col-sm-3 text-right">
                 <button id="clearCompleted" class="b-btn clear-completed">Clear completed</button>
@@ -51,8 +51,9 @@
 
         </div>
 
-        <div class="b-clone" style="display: none;">
-            <li><input type="checkbox"><span>Todo text</span> <button class="b-btn b-btn__remove"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></li>
+        <div id="hollow" class="b-clone" style="display: none;">
+            <li class="list-group-item"><input type="checkbox"><span>Todo text</span> <button class="b-btn b-btn__remove"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+            </li>
         </div>
     </div>
     <!--<script src="./scripts/jquery.min.js"></script>-->
