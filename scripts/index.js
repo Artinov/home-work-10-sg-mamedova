@@ -39,7 +39,6 @@ clearCompleted.onclick = function() {
     todos = todos.filter(function (todo){
        return todo.isDone == false;
     });
-
     updateLocalStorage();
 };
 
@@ -147,17 +146,24 @@ function highlightButton(todoFilter) {
     showCompleted.setAttribute("class","btn btn-default");
     showActive.setAttribute("class","btn btn-default");
     showAll.setAttribute("class","btn btn-default");
-    switch(todoFilter){
-        case true:
-            showCompleted.setAttribute("class","btn btn-primary");
-            break;
-        case false:
-            showActive.setAttribute("class","btn btn-primary");
-            break;
-        case null:
-            showAll.setAttribute("class","btn btn-primary");
-
+    if(todoFilter) {
+        showCompleted.setAttribute("class","btn btn-primary");
+    } else if (todoFilter == false) {
+        showActive.setAttribute("class","btn btn-primary");
+    } else {
+        showAll.setAttribute("class","btn btn-primary");
     }
+    //switch(todoFilter){
+    //    case true:
+    //        showCompleted.setAttribute("class","btn btn-primary");
+    //        break;
+    //    case false:
+    //        showActive.setAttribute("class","btn btn-primary");
+    //        break;
+    //    case null:
+    //        showAll.setAttribute("class","btn btn-primary");
+    //
+    //}
 }
 function changeTodosStatus(todo, liClass, todoState) {
     var li = document.querySelector("li[todo-index='" + todo.index + "']");
